@@ -61,11 +61,6 @@ async function denemmeler() {
             elem.setAttribute('class','secili')
         });
     });
-
-    function secilmemisyap(gelen){
-        dinleyici.forEach(x => x.setAttribute('class,seilmemis'));
-    }
-
     return sonuc;
 }
 denemmeler();
