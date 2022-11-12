@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İzmir Nobetci Eczaneler</title>
+</head>
+<body>
+    <div class="top">    
+        <div class="map">
+            <iframe src="https://maps.google.com/maps?q=38.468519,27.218996&hl=es;z=14&output=embed" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="arama">
+            <h3>Kordinat Giriş Alanı :</h3>
+            <input class="arametin" type="text" value="Bornova">
+            <button class="arabuton">Ara</button>
+        </div>
+        <span class="baslik">Nöbetci Eczaneler İzmir</span>
+    </div>
+    <div class="ecz"></div>
+    <script src="./node_modules/axios/dist/axios.min.js"></script>    
+    <script src="index.js"></script> 
+</body>
+
+</html>

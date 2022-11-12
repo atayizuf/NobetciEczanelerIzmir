@@ -1,0 +1,100 @@
+html{
+    border: none;
+    padding: 0;
+    margin-top: 15px;
+    position: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgb(79, 133, 112);
+}
+span{
+    display: block;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+}
+span > span{
+    font-size: 0.9rem;
+
+}
+.bold{    
+    position: center;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: rgb(0, 0, 0);
+    background-color: rgb(146, 190, 149);
+    font-weight: bold;
+    border-radius: 8px 8px 0px 0px; 
+}
+.genis{
+    height: 75px;
+    border-style:solid;
+    border-color: rgb(41, 58, 58);
+    border-radius: 0px 0px 8px 8px;
+    border-top-style: none;
+    color: white;
+    font-style: normal;
+    margin-bottom: 8px;
+    background-color: black;
+}
+.baslik{
+    font-family: 'Courier New', Courier, monospace;
+    inline-size: 100%;
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+body {
+    position: center;
+}
+.ecz {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div.ecz div{
+    width: 31%;
+    padding: 1em;
+}
+.top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arametin {
+    padding-left: 8px;
+    border-radius: 8px;
+    border: none;
+    width: 273px;
+    height: 32px;
+    outline: none;
+}
+
+.arabuton{
+    margin-left: 12px;
+    width: 57px;
+    height: 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.arama{
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.arama h3{
+    padding-right: 15px;
+    color: white;
+}
+
+.arabuton:hover{
+    background-color: rgb(27, 51, 51);
+    color: white;
+
+}
