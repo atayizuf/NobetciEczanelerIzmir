@@ -20,16 +20,26 @@ async function denemmeler() {
         arametin.value = '';
     }
 
-    function setAttr(){
-        if(!arametin.value==""){
-            let kordinatim=arametin.value;
-            let d1=kordinatim.split(",");
-            //console.log(d1[0],d1[1]);
-            let ss=document.querySelector('.map');
-            let yazi=`https://maps.google.com/maps?q=${d1[0]},${d1[1]}&hl=es;z=14&output=embed`;
-            let ss1=ss.children[0].setAttribute('src',yazi);
-            //console.log(yazi);
-        }
+    //function setAttr(){
+    //    if(!arametin.value==""){
+    //        let kordinatim=arametin.value;
+    //        let d1=kordinatim.split(",");
+    //        //console.log(d1[0],d1[1]);
+    //        let ss=document.querySelector('.map');
+    //        let yazi=`https://maps.google.com/maps?q=${d1[0]},${d1[1]}&hl=es;z=14&output=embed`;
+    //        let ss1=ss.children[0].setAttribute('src',yazi);
+    //        //console.log(yazi);
+    //    }
+    //}
+
+    function setAttr(cord){
+        let kordinatim=cord;
+        let d1=kordinatim.split(",");
+        //console.log(d1[0],d1[1]);
+        let ss=document.querySelector('.map');
+        let yazi=`https://maps.google.com/maps?q=${d1[0]},${d1[1]}&hl=es;z=14&output=embed`;
+        ss.children[0].setAttribute('src',yazi);
+        //console.log(yazi);
     }
 
     sonuc.forEach(x => {
@@ -55,19 +65,26 @@ async function denemmeler() {
         dvim.setAttribute('class','secilmemis');
     })
 
-    const dinleyici= document.querySelectorAll('.secilmemis');
+    function duzleyici(){
+        let dinleyici2=document.querySelector('.secili');
+        if(dinleyici2!=null){
+            dinleyici2.setAttribute('class','secilmemis');
+        }
+    }
+
+    const dinleyici=document.querySelectorAll('.secilmemis');
     dinleyici.forEach(function(elem) {
         elem.addEventListener("click", function() {
-            elem.setAttribute('class','secili')
+            duzleyici(); 
+            elem.setAttribute('class','secili');
+            setAttr(elem.children[1].lastChild.innerText.split(': ').pop());
+            console.log(elem.children[1].lastChild.innerText.split(': ').pop());
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera sayfa top'una git
         });
     });
     return sonuc;
 }
 denemmeler();
-
-
-
-
 
 //veriler=denemmeler();
 //veriler2=[];
