@@ -3,8 +3,7 @@ async function denemmeler() {
     const sonuc = await deneme.json();
     //console.log(sonuc);
 
-    
-
+    const mapMetin=document.querySelector('.adresbas');
     const arametin = document.querySelector('.arametin');
     const arabuton = document.querySelector('.arabuton');
     //arabuton.addEventListener("click", yap);
@@ -79,6 +78,8 @@ async function denemmeler() {
             elem.setAttribute('class','secili');
             setAttr(elem.children[1].lastChild.innerText.split(': ').pop());
             console.log(elem.children[1].lastChild.innerText.split(': ').pop());
+            const ver1=elem.children[0].innerHTML.split('<br>');
+            mapMetin.innerHTML='Bölge : '+ver1[0]+'<br>'+'Eczane İsmi : '+ver1[1]+'<br>'+ver1[2];
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera sayfa top'una git
         });
     });
