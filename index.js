@@ -19,18 +19,6 @@ async function denemmeler() {
         arametin.value = '';
     }
 
-    //function setAttr(){
-    //    if(!arametin.value==""){
-    //        let kordinatim=arametin.value;
-    //        let d1=kordinatim.split(",");
-    //        //console.log(d1[0],d1[1]);
-    //        let ss=document.querySelector('.map');
-    //        let yazi=`https://maps.google.com/maps?q=${d1[0]},${d1[1]}&hl=es;z=14&output=embed`;
-    //        let ss1=ss.children[0].setAttribute('src',yazi);
-    //        //console.log(yazi);
-    //    }
-    //}
-
     function setAttr(cord){
         let kordinatim=cord;
         let d1=kordinatim.split(",");
@@ -47,12 +35,13 @@ async function denemmeler() {
         const dvim = document.createElement('div');
         const bf = document.createElement('span');
         fucks.innerHTML = x.Adres;
+        let kordinatBilgi=x.LokasyonX + ',' + x.LokasyonY;
         bf.innerHTML = x.Bolge + '<br>' + x.Adi + '<br> Telefon : ' + x.Telefon;
         if(!x.BolgeAciklama==""){
-            acik.innerHTML = 'Bölge Açıklama : ' + x.BolgeAciklama + '<br> Kordinatlar : ' + x.LokasyonX + ',' + x.LokasyonY;
+            acik.innerHTML = 'Bölge Açıklama : ' + x.BolgeAciklama + '<span class="ds">Kordinatlar : ' + kordinatBilgi+'</span>';
         }
         else{
-            acik.innerHTML = 'Kordinatlar : ' + x.LokasyonX + ',' + x.LokasyonY;
+            acik.innerHTML = '<span class="ds">Kordinatlar : ' + kordinatBilgi+'</span>';
         }
         let icerik = document.querySelector('.ecz');
         icerik.appendChild(dvim);
@@ -76,21 +65,19 @@ async function denemmeler() {
         elem.addEventListener("click", function() {
             duzleyici(); 
             elem.setAttribute('class','secili');
-            setAttr(elem.children[1].lastChild.innerText.split(': ').pop());
-            console.log(elem.children[1].lastChild.innerText.split(': ').pop());
+            setAttr(elem.children[1].children[0].innerHTML.split('Kordinatlar : ')[1].substring(0,19));
+            console.log(elem.children[1].children[0].innerHTML.split('Kordinatlar : ')[1].substring(0,19));
             const ver1=elem.children[0].innerHTML.split('<br>');
-            mapMetin.innerHTML='Bölge : '+ver1[0]+'<br>'+'Eczane İsmi : '+ver1[1]+'<br>'+ver1[2];
+            if(elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]!=undefined){
+                mapMetin.style.dinleyici='flex';
+                mapMetin.innerHTML='<div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2]+'</div></div><div class="red"><span> Açıklama : <br>'+elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]+'</span></div>';
+            }
+            else{
+                mapMetin.innerHTML='<div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2];
+            }            
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera sayfa top'una git
         });
     });
     return sonuc;
 }
 denemmeler();
-
-//veriler=denemmeler();
-//veriler2=[];
-//veriler.then((res) => {veriler2=(res);
-//console.log(veriler2[0].LokasyonX+','+veriler2[0].LokasyonY);
-//console.log(veriler2)
-//});
-
