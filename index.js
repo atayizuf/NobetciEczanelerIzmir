@@ -3,7 +3,7 @@ async function denemmeler() {
     const sonuc = await deneme.json();
     //console.log(sonuc);
 
-    const mapMetin=document.querySelector('.adresbas');
+    const mapMetin=document.querySelector('.ecbiltutan');
     const arametin = document.querySelector('.arametin');
     const arabuton = document.querySelector('.arabuton');
     //arabuton.addEventListener("click", yap);
@@ -69,11 +69,10 @@ async function denemmeler() {
             console.log(elem.children[1].children[0].innerHTML.split('Kordinatlar : ')[1].substring(0,19));
             const ver1=elem.children[0].innerHTML.split('<br>');
             if(elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]!=undefined){
-                mapMetin.style.dinleyici='flex';
-                mapMetin.innerHTML='<div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2]+'</div></div><div class="red"><span> Açıklama : <br>'+elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]+'</span></div>';
+                mapMetin.innerHTML='<div class="adresbas"><div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2]+'</div></div><div class="red"><span> Açıklama : <br>'+elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]+'</span></div></div>';
             }
             else{
-                mapMetin.innerHTML='<div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2];
+                mapMetin.innerHTML='<div class="adresbas"><div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2]+'</div>';
             }            
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera sayfa top'una git
         });
