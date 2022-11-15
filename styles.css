@@ -42,6 +42,7 @@ span > span{
     inline-size: 100%;
     font-size: 40px;
     margin-bottom: 12px;
+    letter-spacing: 3px;
 }
 
 body {
@@ -84,8 +85,9 @@ div.ecz div{
 }
 
 .arama{
+    display: none;
     padding: 12px;
-    display: flex;
+    /*display: flex;*/
     flex-direction: row;
     align-items: center;
 }
@@ -147,3 +149,4 @@ span .ds{
 .ecbiltutan{
     width: 100%;
 }
+
