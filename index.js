@@ -36,7 +36,7 @@ async function denemmeler() {
         const bf = document.createElement('span');
         fucks.innerHTML = x.Adres;
         let kordinatBilgi=x.LokasyonX + ',' + x.LokasyonY;
-        bf.innerHTML = x.Bolge + '<br>' + x.Adi + '<br> Telefon : ' + x.Telefon;
+        bf.innerHTML = '<span class="bolge">'+x.Bolge +'</span>' + '<span class="eczAd">'+x.Adi +'</span>' + '<span class="eczTel">'+x.Telefon +'</span>';
         if(!x.BolgeAciklama==""){
             acik.innerHTML = 'Bölge Açıklama : ' + x.BolgeAciklama + '<span class="ds">Kordinatlar : ' + kordinatBilgi+'</span>';
         }
@@ -67,12 +67,12 @@ async function denemmeler() {
             elem.setAttribute('class','secili');
             setAttr(elem.children[1].children[0].innerHTML.split('Kordinatlar : ')[1].substring(0,19));
             console.log(elem.children[1].children[0].innerHTML.split('Kordinatlar : ')[1].substring(0,19));
-            const ver1=elem.children[0].innerHTML.split('<br>');
+            let topBolg=document.querySelector('.secili');
             if(elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]!=undefined){
-                mapMetin.innerHTML='<div class="adresbas"><div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2]+'</div></div><div class="red"><span> Açıklama : <br>'+elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]+'</span></div></div>';
+                mapMetin.innerHTML='<div class="adresbas"><div class="soltaraf"><div>Bölge : '+topBolg.children[0].children[0].innerHTML+'</div>'+'<div>Eczane İsmi : '+topBolg.children[0].children[1].innerHTML+'</div>'+'<div>'+topBolg.children[0].children[2].innerHTML+'</div></div><div class="red"><span> Açıklama : <br>'+elem.children[1].children[0].innerHTML.split('<spa')[0].split('Bölge Açıklama : ')[1]+'</span></div></div>';
             }
             else{
-                mapMetin.innerHTML='<div class="adresbas"><div class="soltaraf"><div>Bölge : '+ver1[0]+'</div>'+'<div>Eczane İsmi : '+ver1[1]+'</div>'+'<div>'+ver1[2]+'</div>';
+                mapMetin.innerHTML='<div class="adresbas"><div class="soltaraf"><div>Bölge : '+topBolg.children[0].children[0].innerHTML+'</div>'+'<div>Eczane İsmi : '+topBolg.children[0].children[1].innerHTML+'</div>'+'<div>'+topBolg.children[0].children[2].innerHTML+'</div>';
             }            
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera sayfa top'una git
         });

@@ -35,7 +35,7 @@ span > span{
     color: white;
     font-style: normal;
     margin-bottom: 8px;
-    background-color: black;
+    background-color: rgb(38, 54, 37);
 }
 .baslik{
     font-family: 'Courier New', Courier, monospace;
@@ -127,7 +127,7 @@ span .ds{
     color: rgb(201, 31, 31);
     font-weight: bold;
     height: 120px;
-    background-color: rgb(84, 20, 20);
+    background-color: rgba(255, 38, 0, 0.774);
     border-radius: 0px 18px 18px 0px;
     display: flex;
     justify-content: center;
@@ -150,3 +150,18 @@ span .ds{
     width: 100%;
 }
 
+.bolge{
+    font-size: 45px;
+    letter-spacing: 2px;
+    padding-top: 3px;
+    color: rgba(70, 2, 2, 0.719);
+}
+.eczAd{
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+.eczTel{
+    font-size: 20px;
+    letter-spacing: 2px;
+}
