@@ -5,11 +5,12 @@ html{
     position: center;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgb(79, 133, 112);
+    background-color: #0e0a0aab;
 }
+
 span{
     display: block;
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     text-align: center;
     color: white;
 }
@@ -17,32 +18,43 @@ span > span{
     font-size: 0.9rem;
 
 }
-.bold{    
-    position: center;
-    font-size: 1.1rem;
+.bold{   
+    width: 100%; 
+    display: flex;
+    justify-content: center;
     font-style: italic;
     color: rgb(0, 0, 0);
-    background-color: rgb(146, 190, 149);
+    background-color: #d55858;
     font-weight: bold;
     border-radius: 8px 8px 0px 0px; 
 }
+.bold:hover{
+    background-color: #d69393c7;
+}
+
 .genis{
     height: 75px;
     border-style:solid;
-    border-color: rgb(41, 58, 58);
+    border-color: rgb(235, 247, 247);
     border-radius: 0px 0px 8px 8px;
     border-top-style: none;
     color: white;
     font-style: normal;
     margin-bottom: 8px;
-    background-color: rgb(38, 54, 37);
+    background-color: #383838;
 }
 .baslik{
     font-family: 'Courier New', Courier, monospace;
     inline-size: 100%;
-    font-size: 40px;
+    font-size: 2rem;
+    font-weight: bold;
     margin-bottom: 12px;
     letter-spacing: 3px;
+    color: rgb(255, 255, 255);
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.7rem;
 }
 
 body {
@@ -51,12 +63,11 @@ body {
 .ecz {
     display: flex;
     flex-direction: row;
+    grid-template-columns: r160px, 1fr;
     flex-wrap: wrap;
     justify-content: center;
 }
 div.ecz div{
-    width: 31%;
-    padding: 1em;
     cursor: pointer;
 }
 .top {
@@ -110,8 +121,20 @@ span .ds{
     display:none;
 }
 .genis{
-    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
+
+.genis :first{
+    padding-top: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .adresbas{
     display: flex;
     width: 100%;
@@ -119,10 +142,10 @@ span .ds{
     margin-top: 12px;
     flex-direction: row;
     align-items: center;
-    background-color: bisque;
+    background-color: rgb(255, 255, 255);
     border-radius: 18px;
 }
-.red{
+.red {
     width: 100%;
     color: rgb(201, 31, 31);
     font-weight: bold;
@@ -131,37 +154,112 @@ span .ds{
     border-radius: 0px 18px 18px 0px;
     display: flex;
     justify-content: center;
+    
 }
 .red span{
-    font-size: 31px;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: 100%;
 }
 .soltaraf{
-    font-size: 24px;
+    font-size: 1rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.soltaraf div{
+    display: inline;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.soltaraf :first-child{
+    font-weight: bold;
+    display: inline;
+    justify-content:flex-start;
+    align-items: center;
+}
+
 .ecbiltutan{
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .bolge{
+    display: flex;
+    flex-direction: column;
     font-size: 45px;
     letter-spacing: 2px;
     padding-top: 3px;
     color: rgba(70, 2, 2, 0.719);
 }
 .eczAd{
-    font-size: 20px;
-    letter-spacing: 5px;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: .4rem;
 }
 
 .eczTel{
     font-size: 20px;
     letter-spacing: 2px;
+    padding: .3rem;
+}
+
+#bolgeSec{
+    width: 200px;
+    height: 30px;
+    border-radius: 2rem;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+}
+
+.secilmemis{
+    width: 400px;
+    margin: 10px;
+    display:inline;
+    flex-direction: column;
+}
+
+#list{
+    display: flex;
+    flex-direction: row;
+}
+
+.baslikkap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.secili{
+    width: 400px;
+    margin: 10px;
+    display:inline;
+    flex-direction: column;
+
+}
+.genis > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bolgeAdiUst{
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    letter-spacing: 2px;
+    padding-top: 3px;
+    color: #383838;
+    /**-webkit-text-stroke: 0.051rem;
+    -webkit-text-fill-color: white;**/
 }
