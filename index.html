@@ -1,34 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="./styles.css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link rel="stylesheet" href="./styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>İzmir Nobetci Eczaneler</title>
     <!--<script src="https://cdn.tailwindcss.com"></script>-->
-</head>
-<body>
-    <div class="top">    
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100051.49345122607!2d27.142269315277048!3d38.40423553069429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862a762cacd%3A0x628cbba1a59ce8fe!2zxLB6bWly!5e0!3m2!1str!2str!4v1668372188797!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </head>
+  <body>
+    <div class="top">
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100051.49345122607!2d27.142269315277048!3d38.40423553069429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862a762cacd%3A0x628cbba1a59ce8fe!2zxLB6bWly!5e0!3m2!1str!2str!4v1668372188797!5m2!1str!2str"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <div class="ecbiltutan"></div>
+      <div class="arama">
+        <h3>Kordinat Giriş Alanı :</h3>
+        <input class="arametin" type="text" value="Bornova" />
+        <button class="arabuton">Ara</button>
+      </div>
+      <div class="baslikkap">
+        <div id="list">
+          <select name="" id="bolgeSec"></select>
         </div>
-        <div class="ecbiltutan"></div>
-        <div class="arama">
-            <h3>Kordinat Giriş Alanı :</h3>
-            <input class="arametin" type="text" value="Bornova">
-            <button class="arabuton">Ara</button>
-        </div>
-        <div class="baslikkap">
-            <span class="baslik bg-red">Nöbetci Eczaneler İzmir</span>
-            <div id="list">
-                <select name="" id="bolgeSec"></select>
-            </div>   
-        </div>
+      </div>
     </div>
     <div class="ecz"></div>
-    <script src="index.js"></script> 
-    
-</body>
-<script></script>
+    <script src="index.js"></script>
+  </body>
+  <script></script>
 </html>
