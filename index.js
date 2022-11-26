@@ -1,14 +1,9 @@
 async function denemmeler() {
-  const deneme = await fetch(
-    "https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler"
-  );
+  const deneme = await fetch("https://openapi.izmir.bel.tr/api/ibb/nobetcieczaneler");
   const sonuc = await deneme.json();
-  //console.log(sonuc);
-
   const mapMetin = document.querySelector(".ecbiltutan");
   const arametin = document.querySelector(".arametin");
   const arabuton = document.querySelector(".arabuton");
-  //arabuton.addEventListener("click", yap);
   arametin.addEventListener("click", temizle);
   arabuton.addEventListener("click", setAttr);
   function yap() {
@@ -21,6 +16,11 @@ async function denemmeler() {
     arametin.value = "";
   }
 
+  let clickdurum=document.querySelector('#topagit');
+  clickdurum.addEventListener("click", function() {
+    window.scrollTo(0,0);
+  });
+
   function setAttr(cord) {
     let kordinatim = cord;
     let d1 = kordinatim.split(",");
@@ -30,7 +30,6 @@ async function denemmeler() {
     ss.children[0].setAttribute("src", yazi);
     //console.log(yazi);
   }
-
   sonuc.forEach((x) => {
     const fucks = document.createElement("div");
     const acik = document.createElement("span"); //span
@@ -68,14 +67,12 @@ async function denemmeler() {
     fucks.setAttribute("class", "genis");
     dvim.setAttribute("class", "secilmemis");
   });
-
   function duzleyici() {
     let dinleyici2 = document.querySelector(".secili");
     if (dinleyici2 != null) {
       dinleyici2.setAttribute("class", "secilmemis");
     }
   }
-
   const dinleyici = document.querySelectorAll(".secilmemis");
   dinleyici.forEach(function (elem) {
     elem.addEventListener("click", function () {
@@ -124,10 +121,9 @@ async function denemmeler() {
           topBolg.children[0].children[0].children[2].innerHTML +
           "</div>";
       }
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera sayfa top'una git
+      window.scrollTo(0,0); // For Chrome, Firefox, IE and Opera sayfa top'una git
     });
   });
-
   const listim = document.querySelectorAll(".bolgeAdiUst");
   listim.forEach((x) => {
     const option = document.createElement("option");
@@ -137,11 +133,28 @@ async function denemmeler() {
     listHT.appendChild(option);
     console.clear();
   });
+  const listM=document.getElementById('bolgeSec');  
+  listM.addEventListener("change", function() {
+      console.log(document.getElementById('bolgeSec').value);
+});
 
-  return sonuc;
+const gelenBtn=document.querySelector('.sfrla');
+gelenBtn.addEventListener('click', () => {
+  listeyitemizle();
+  git();
+})
+
+function listeyitemizle(){
+  const listM=document.getElementById('bolgeSec');
+  listM.value=listM[0].value;
+  console.log(listM[0].innerHTML)
+}
+
+
+// function git() {
+//   const element = document.getElementById(`"${buragit}"`);
+//   element.scrollIntoView();
+// }
+  // return sonuc;
 }
 denemmeler();
-
-document.addEventListener("click", console.log("c"));
-//listHT.setAttribute('onchange',degerne());
-function degerne() {}
