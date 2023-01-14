@@ -26,10 +26,18 @@ async function denemmeler() {
     let d1 = kordinatim.split(",");
     //console.log(d1[0],d1[1]);
     let ss = document.querySelector(".map");
+    let mm = document.getElementsByClassName('link')[0];
     let yazi = `https://maps.google.com/maps?q=${d1[0]},${d1[1]}&hl=es;z=14&output=embed`;
     ss.children[0].setAttribute("src", yazi);
+    mm.setAttribute('href',`https://maps.google.com/maps?q=${d1[0]},${d1[1]}&hl=es;z=14`);
+    document.getElementsByClassName('macacust')[0].style.display="flex";
     //console.log(yazi);
   }
+  sonuc.sort((a,b) => {
+    if(a.Bolge<b.Bolge){
+      return -1;
+    }
+  }); // Bölge ismine göre sıralama ALFABETIK
   sonuc.forEach((x) => {
     const fucks = document.createElement("div");
     const acik = document.createElement("span"); //span
@@ -67,6 +75,9 @@ async function denemmeler() {
     fucks.setAttribute("class", "genis");
     dvim.setAttribute("class", "secilmemis");
   });
+
+  const atcigerim=document.getElementById('aticeri').innerHTML=sonuc.length;
+
   function duzleyici() {
     let dinleyici2 = document.querySelector(".secili");
     if (dinleyici2 != null) {
@@ -104,6 +115,9 @@ async function denemmeler() {
           "</div>" +
           "<div>" +
           topBolg.children[0].children[0].children[2].innerHTML +
+          '</div>' +
+          '<div>' +
+          topBolg.children[1].children[0].innerHTML +
           '</div></div><div class="red"><span> Açıklama : <br>' +
           elem.children[1].children[1].innerHTML
             .split("<spa")[0]
@@ -119,7 +133,10 @@ async function denemmeler() {
           "</div>" +
           "<div>" +
           topBolg.children[0].children[0].children[2].innerHTML +
-          "</div>";
+          "</div>" +
+          '<div>' +
+          topBolg.children[1].children[0].innerHTML +
+          '</div>';
       }
       window.scrollTo(0,0); // For Chrome, Firefox, IE and Opera sayfa top'una git
     });
@@ -151,6 +168,7 @@ function listeyitemizle(){
 }
 
 
+
 // function git() {
 //   const element = document.getElementById(`"${buragit}"`);
 //   element.scrollIntoView();
@@ -158,3 +176,15 @@ function listeyitemizle(){
   // return sonuc;
 }
 denemmeler();
+
+// Bölgeleri Getirdim
+// let f1=document.querySelector('.ecz');
+// for(i=0;i<f1.childElementCount;i++){
+//     console.log(f1.children[i].children[0].children[0].children[0].innerHTML);
+// }
+
+let macacustlink=document.getElementsByClassName("macacust")[0];
+macacustlink.addEventListener("click", () => {
+  window.open(document.querySelector(".link").getAttribute("href"),'_blank');
+  console.log("biyerlere git");
+})

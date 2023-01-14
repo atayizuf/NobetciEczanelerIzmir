@@ -17,6 +17,21 @@ span {
 span > span {
   font-size: 0.9rem;
 }
+a{
+  text-decoration: none;
+}
+
+.macacust>i{
+  color:wheat;
+  font-size: 2rem;
+}
+
+.macacust>svg{
+  height: 35px;
+  margin-left: 25px;
+  fill: rgb(255, 255, 255);
+}
+
 .bold {
   width: 100%;
   display: flex;
@@ -56,8 +71,6 @@ span > span {
   margin-top: 0.7rem;
 }
 
-body {
-}
 .ecz {
   display: flex;
   flex-direction: row;
@@ -114,6 +127,41 @@ div.ecz div {
 }
 .map iframe {
   width: 100%;
+  border-radius: 18px;
+}
+
+.macacust{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.9rem;
+  width: 600px;
+  height: 50px;
+  background-color:#d55858;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+.mapac{
+  cursor: pointer;  
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .mapac{
+    font-size: 1.7rem;
+  }
+  .macacust{
+    width: 300px;
+    height: 50px;
+  }
+}
+
+.mapac:active{
+  background-color: #383838;
+  user-select: none;
 }
 span .ds {
   display: none;
@@ -137,7 +185,7 @@ span .ds {
   display: flex;
   width: 100%;
   height: 120px;
-  margin-top: 12px;
+  margin-top: 0.5rem;
   flex-direction: row;
   align-items: center;
   background-color: #d55858;
@@ -196,6 +244,20 @@ span .ds {
   justify-content: center;
 }
 
+.not{
+  padding: auto;
+  display: flex;
+  font-size: 2rem;  
+  font-style: italic;
+  color:rgb(27, 51, 51)
+}
+.not span{
+  font-weight: bold;
+  margin: 0 10px;
+  font-size: 2rem;
+  font-style: italic;
+}
+
 .bolge {
   display: flex;
   flex-direction: column;
@@ -224,6 +286,12 @@ span .ds {
   font-size: 15px;
   font-weight: bold;
   border: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #bolgeSec{
+    width: 224px;
+  }  
 }
 
 .secilmemis {
@@ -258,6 +326,10 @@ span .ds {
   align-items: center;
 }
 
+.secili .bold{
+  background-color: #97b522;
+}
+
 .bolgeAdiUst {
   display: flex;
   flex-direction: column;
@@ -279,11 +351,12 @@ span .ds {
   text-align: center;
   font-size: 15px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .sfrla:active{
-  background-color: #d55858;
-  color: white;  
+  background-color:#383838;
+  color:#d55858;  
 }
 
 #topagit{
@@ -297,11 +370,19 @@ span .ds {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 #topagit:active{
   background-color:#383838;
   color: white;  
+}
+
+@media only screen and (max-width: 600px) {
+  #topagit {
+    right: calc(screen/2);    
+    bottom: 2%;
+  }
 }
 
 i{
