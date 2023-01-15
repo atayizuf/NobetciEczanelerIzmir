@@ -33,11 +33,14 @@ async function denemmeler() {
     document.getElementsByClassName('macacust')[0].style.display="flex";
     //console.log(yazi);
   }
-  sonuc.sort((a,b) => {
-    if(a.Bolge<b.Bolge){
-      return -1;
-    }
-  }); // Bölge ismine göre sıralama ALFABETIK
+  // sonuc.sort((a,b) => {
+  //   if(a.Bolge<b.Bolge){
+  //     return -1;
+  //   }});
+  
+  sonuc.sort(function (a, b) {
+    return a.Bolge.localeCompare(b.Bolge);
+  });  // Bölge ismine göre sıralama ALFABETIK
   sonuc.forEach((x) => {
     const fucks = document.createElement("div");
     const acik = document.createElement("span"); //span
