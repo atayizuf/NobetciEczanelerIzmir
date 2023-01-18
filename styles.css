@@ -149,13 +149,19 @@ div.ecz div {
   text-decoration: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .mapac{
     font-size: 1.7rem;
   }
   .macacust{
     width: 300px;
     height: 50px;
+  }
+  .not{
+    font-size: 1.15rem !important;
+  }
+  .not span{
+    font-size: 1.4rem !important;
   }
 }
 
@@ -216,7 +222,7 @@ span .ds {
   height: 100%;
 }
 .soltaraf {
-  font-size: 1rem;
+  font-size: 1.3rem;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -238,6 +244,12 @@ span .ds {
   align-items: center;
 }
 
+@media screen and (max-width: 650px){
+  .soltaraf{
+    font-size: 1rem !important;
+  }
+}
+
 .ecbiltutan {
   width: 100%;
   display: flex;
@@ -249,7 +261,8 @@ span .ds {
   display: flex;
   font-size: 2rem;  
   font-style: italic;
-  color:rgb(27, 51, 51)
+  color:rgb(27, 51, 51);
+  align-items: center;
 }
 .not span{
   font-weight: bold;
@@ -288,7 +301,7 @@ span .ds {
   border: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   #bolgeSec{
     width: 224px;
   }  
@@ -327,8 +340,12 @@ span .ds {
 }
 
 .secili .bold{
-  background-color: #97b522;
+  background-color: #298f7c;
 }
+
+/* .secili .bold .bolge >*{
+  color: rgb(95, 247, 249)
+} */
 
 .bolgeAdiUst {
   display: flex;
@@ -378,7 +395,7 @@ span .ds {
   color: white;  
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
   #topagit {
     right: calc(screen/2);    
     bottom: 2%;
@@ -387,4 +404,25 @@ span .ds {
 
 i{
   color:#d55858
+}
+
+
+/* ::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+} */
+
+::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 5px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #d55858;
 }
