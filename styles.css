@@ -151,7 +151,7 @@ div.ecz div {
 
 @media only screen and (max-width: 700px) {
   .mapac{
-    font-size: 1.7rem;
+    font-size: 1.2rem;
   }
   .macacust{
     width: 300px;
@@ -162,6 +162,12 @@ div.ecz div {
   }
   .not span{
     font-size: 1.4rem !important;
+  }
+}
+
+@media only screen and (max-width:440px) {
+  .not{
+    font-size: 0.8rem !important;
   }
 }
 
