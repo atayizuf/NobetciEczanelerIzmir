@@ -169,16 +169,16 @@ div.ecz div {
   .not{
     font-size: 0.8rem !important;
   }
+  .nobetacikl{
+    font-size: 0.8rem !important;
+  }
 }
 
 .nobetacikl {
-  /* color: #d55858; */
-  padding: auto;
-  display: flex;
+  text-align: center;
   font-size: 2rem;  
   font-style: italic;
   color:rgb(255, 255, 255);
-  align-items: center;
 }
 
 .mapac:active{
